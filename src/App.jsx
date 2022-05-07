@@ -1,29 +1,32 @@
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import { useState } from "react";
 
 function App() {
-    let expenses = [
+    const dummyExpenses = [
         {
             title: "Eating Out",
-            expenseDate: new Date(2022, 5, 5),
-            expenseAmount: 100,
+            date: new Date(2022, 5, 5),
+            amount: 100,
         },
         {
             title: "Going Out",
-            expenseDate: new Date(2022, 5, 6),
-            expenseAmount: 300,
+            date: new Date(2022, 5, 6),
+            amount: 300,
         },
         {
             title: "Udemy Courses for React",
-            expenseDate: new Date(2022, 5, 5),
-            expenseAmount: 70,
+            date: new Date(2022, 5, 5),
+            amount: 70,
         },
     ];
 
+    const [expenses, setExpenses] = useState(dummyExpenses);
+
     function addExpenseHandler(expense) {
-        console.log("In app.js");
-        expenses.push(expense);
-        console.log(expenses);
+        setExpenses((prevExpenses) => {
+            return [...prevExpenses, expense];
+        });
     }
 
     return (

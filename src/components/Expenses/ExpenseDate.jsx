@@ -1,13 +1,11 @@
 import "./ExpenseDate.css";
 
 function ExpenseDate(props) {
-    const month = props.expenseDate.toLocaleDateString("tr-TR", {
+    const month = props.date.toLocaleDateString("tr-TR", {
         month: "long",
     });
-    const year = props.expenseDate.toLocaleDateString("tr-TR", {
-        year: "numeric",
-    });
-    const day = props.expenseDate.toLocaleDateString("tr-TR", {
+    const year = props.date.getFullYear();
+    const day = props.date.toLocaleDateString("tr-TR", {
         day: "2-digit",
     });
 

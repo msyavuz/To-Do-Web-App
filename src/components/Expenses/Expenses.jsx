@@ -19,21 +19,13 @@ function Expenses(props) {
                 selected={filteredYear}
                 onFilterChange={getYearFilter}
             ></ExpensesFilter>
-            <ExpenseItem
-                title={expenses[0].title}
-                expenseDate={expenses[0].expenseDate}
-                expenseAmount={expenses[0].expenseAmount}
-            ></ExpenseItem>
-            <ExpenseItem
-                title={expenses[1].title}
-                expenseDate={expenses[1].expenseDate}
-                expenseAmount={expenses[1].expenseAmount}
-            ></ExpenseItem>
-            <ExpenseItem
-                title={expenses[2].title}
-                expenseDate={expenses[2].expenseDate}
-                expenseAmount={expenses[2].expenseAmount}
-            ></ExpenseItem>
+            {expenses.map((expense) => (
+                <ExpenseItem
+                    title={expense.title}
+                    date={expense.date}
+                    amount={expense.amount}
+                ></ExpenseItem>
+            ))}
         </Card>
     );
 }

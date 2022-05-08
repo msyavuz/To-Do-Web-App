@@ -11,12 +11,12 @@ function App() {
         },
         {
             title: "Going Out",
-            date: new Date(2022, 5, 6),
+            date: new Date(2021, 5, 6),
             amount: 300,
         },
         {
             title: "Udemy Courses for React",
-            date: new Date(2022, 5, 5),
+            date: new Date(2020, 5, 5),
             amount: 70,
         },
     ];

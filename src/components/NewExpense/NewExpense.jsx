@@ -1,18 +1,10 @@
 import "./NewExpense.css";
-import ExpenseForm from "./ExpenseForm";
+import AddExpenseTab from "./AddExpenseTab";
 
 function NewExpense(props) {
-    function saveExpenseDataHandler(enteredExpenseData) {
-        const expenseData = {
-            ...enteredExpenseData,
-            id: Math.floor(Math.random() * 100).toString(),
-        };
-        props.onAddExpense(expenseData);
-    }
-
     return (
         <div className="new-expense">
-            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+            <AddExpenseTab onAddExpense={props.onAddExpense}></AddExpenseTab>
         </div>
     );
 }
